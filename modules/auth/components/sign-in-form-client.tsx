@@ -43,7 +43,7 @@ const SignInFormClient = () => {
         </form>
         <form action={handleGithubSignIn}>
           <Button type="submit" variant={"outline"} className="w-full">
-            <siGithub className="mr-2 h-4 w-4" />
+            {/* <siGithub className="mr-2 h-4 w-4" /> */}
             <span>Sign in with github</span>
           </Button>
         </form>

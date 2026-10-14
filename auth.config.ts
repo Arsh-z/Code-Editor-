@@ -13,4 +13,5 @@ export default {
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
+  secret: process.env.NEXT_AUTH_SECRET
 } satisfies NextAuthConfig;

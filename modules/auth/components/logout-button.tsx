@@ -1,21 +1,15 @@
-import React from "react";
-import { LogoutButtonProps } from "../types";
-import { useRouter } from "next/navigation";
+"use client";
 import { signOut } from "next-auth/react";
-
-const LogoutButton = ({ children }: LogoutButtonProps) => {
+import { useRouter } from "next/navigation";
+export default function LogoutButton() {
   const router = useRouter();
-
   const onLogout = async () => {
-     await signOut()
-     router.refresh()
+    await signOut({ callbackUrl: "/auth/sign-in" });
   };
-
   return (
     <span className="cursor-pointer" onClick={onLogout}>
-      {children}
+      {" "}
+      Logout{" "}
     </span>
   );
-};
-
-export default LogoutButton;
+}
