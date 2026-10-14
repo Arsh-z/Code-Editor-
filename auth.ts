@@ -7,13 +7,14 @@ import { getUserById } from "./modules/auth/actions"
 export const { handlers, signIn, signOut, auth } = NextAuth({
     callbacks: {
         async signIn({ user, account }) {
+
             if (!user || !account) return false;
 
             const existingUser = await db.user.findUnique({
                 where: { email: user.email!}
             })
 
-            if (!existingUser) {
+if (!existingUser) {
   const newUser = await db.user.create({
     data: {
       email: user.email!,
